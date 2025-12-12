@@ -26,7 +26,7 @@ def load_question_bank():
     """加载题库 - 使用缓存，只执行一次"""
     print("📚 加载题库")
     
-    excel_file = "语言测试题库.xlsx"
+    excel_file = "语言测试/语言测试题库.xlsx"
     if not os.path.exists(excel_file):
         st.error(f"未找到题库文件：{excel_file}")
         return []
