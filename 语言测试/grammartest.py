@@ -366,10 +366,10 @@ def show_results_with_charts():
     
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.plot(range(1, len(difficulty_numeric) + 1), difficulty_numeric, marker='o', linewidth=2, color='#1f77b4')
-    ax.set_xlabel("题目序号")
-    ax.set_ylabel("难度级别")
+    ax.set_xlabel("id_number")
+    ax.set_ylabel("difficulty")
     ax.set_yticks([1, 2, 3])
-    ax.set_yticklabels(['简单', '中等', '困难'])
+    ax.set_yticklabels(['easy', 'medium', 'hard'])
     ax.set_ylim(0.5, 3.5)
     ax.grid(True, alpha=0.3)
     st.pyplot(fig)
@@ -393,9 +393,9 @@ def show_results_with_charts():
     # 难度分布饼图
     st.subheader("难度分布")
     difficulty_counts = {
-        '简单': len([ans for ans in st.session_state.user_answers if ans['difficulty'] == 'easy']),
-        '中等': len([ans for ans in st.session_state.user_answers if ans['difficulty'] == 'medium']),
-        '困难': len([ans for ans in st.session_state.user_answers if ans['difficulty'] == 'hard'])
+        'easy': len([ans for ans in st.session_state.user_answers if ans['difficulty'] == 'easy']),
+        'medium': len([ans for ans in st.session_state.user_answers if ans['difficulty'] == 'medium']),
+        'hard': len([ans for ans in st.session_state.user_answers if ans['difficulty'] == 'hard'])
     }
     
     col1, col2 = st.columns([1, 2])
